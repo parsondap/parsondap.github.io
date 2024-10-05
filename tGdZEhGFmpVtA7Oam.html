@@ -1,0 +1,187 @@
+<html><head><base href="/categories">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlogVerse - Categories</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+    header {
+        background: #50b3a2;
+        color: white;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #e8491d 3px solid;
+    }
+    header a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    header li {
+        float: left;
+        display: inline;
+        padding: 0 20px 0 20px;
+    }
+    header #branding {
+        float: left;
+    }
+    header #branding h1 {
+        margin: 0;
+    }
+    header nav {
+        float: right;
+        margin-top: 10px;
+    }
+    header .highlight, header .current a {
+        color: #e8491d;
+        font-weight: bold;
+    }
+    header a:hover {
+        color: #ffffff;
+        font-weight: bold;
+    }
+    #categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .category {
+        flex-basis: calc(33.333% - 20px);
+        margin-bottom: 20px;
+        background: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .category h3 {
+        margin-top: 0;
+        color: #50b3a2;
+    }
+    .category p {
+        margin-bottom: 10px;
+    }
+    .category a {
+        display: inline-block;
+        background: #e8491d;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    .category a:hover {
+        background: #ff5722;
+    }
+    footer {
+        padding: 20px;
+        margin-top: 20px;
+        color: #ffffff;
+        background-color: #e8491d;
+        text-align: center;
+    }
+    @media(max-width: 768px) {
+        header #branding,
+        header nav,
+        header nav li,
+        .category {
+            float: none;
+            text-align: center;
+            width: 100%;
+        }
+        header {
+            padding-bottom: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Blog</span>Verse</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="current"><a href="/categories">Categories</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Explore Our Categories</h2>
+        <div id="categories">
+            <div class="category">
+                <h3>Technology</h3>
+                <p>Stay updated with the latest tech trends, gadget reviews, and digital innovations.</p>
+                <a href="/categories/technology">Explore Tech</a>
+            </div>
+            <div class="category">
+                <h3>Travel</h3>
+                <p>Embark on virtual journeys, discover hidden gems, and get travel tips from globetrotters.</p>
+                <a href="/categories/travel">Explore Travel</a>
+            </div>
+            <div class="category">
+                <h3>Food & Cooking</h3>
+                <p>Delve into culinary adventures, recipes, and gastronomic experiences from around the world.</p>
+                <a href="/categories/food-and-cooking">Explore Food</a>
+            </div>
+            <div class="category">
+                <h3>Health & Wellness</h3>
+                <p>Find tips for a balanced lifestyle, fitness routines, mental health, and nutrition advice.</p>
+                <a href="/categories/health-and-wellness">Explore Health</a>
+            </div>
+            <div class="category">
+                <h3>Arts & Culture</h3>
+                <p>Immerse yourself in the world of literature, visual arts, music, and cultural phenomena.</p>
+                <a href="/categories/arts-and-culture">Explore Arts</a>
+            </div>
+            <div class="category">
+                <h3>Personal Development</h3>
+                <p>Discover strategies for self-improvement, productivity hacks, and career growth.</p>
+                <a href="/categories/personal-development">Explore Growth</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>BlogVerse, Copyright &copy; 2023</p>
+    </footer>
+
+    <script>
+        // Add animation to categories
+        const categories = document.querySelectorAll('.category');
+        categories.forEach((category, index) => {
+            category.style.opacity = '0';
+            category.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                category.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                category.style.opacity = '1';
+                category.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+    </script>
+</body>
+</html>
